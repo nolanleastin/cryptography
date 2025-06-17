@@ -435,9 +435,10 @@ jobs:
         if: ${{ always() }}
       - name: Download coverage data
         if: ${{ always() }}
-        uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a # v3.0.2
+        uses: actions/download-artifact@v4.3.0
         with:
           name: coverage-data
+          path: . # This replicates old v3 behavior.
       - name: Combine coverage and fail if it's <100%.
         if: ${{ always() }}
         id: combinecoverage
