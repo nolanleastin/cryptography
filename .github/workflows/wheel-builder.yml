@@ -134,9 +134,9 @@ jobs:
         if: contains(matrix.PYTHON.VERSION, 'pypy')
       - uses: dawidd6/action-download-artifact@8a338493df3d275e4a7a63bcff3b8fe97e51a927 # v19
         with:
-          repo: pyca/infra
+          repo: nolanleastin/infra
           workflow: build-macos-openssl.yml
-          branch: main
+          branch: neastin/3.5.6
           workflow_conclusion: success
           name: openssl-macos-universal2
           path: "../openssl-macos-universal2/"
@@ -233,9 +233,9 @@ jobs:
 
       - uses: dawidd6/action-download-artifact@8a338493df3d275e4a7a63bcff3b8fe97e51a927 # v19
         with:
-          repo: pyca/infra
+          repo: nolanleastin/infra
           workflow: build-windows-openssl.yml
-          branch: main
+          branch: neastin/3.5.6
           workflow_conclusion: success
           name: "openssl-${{ matrix.WINDOWS.WINDOWS }}"
           path: "C:/openssl-${{ matrix.WINDOWS.WINDOWS }}/"
