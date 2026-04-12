@@ -1,26 +1,5 @@
 name: Publish to PyPI
 
-on:
-  workflow_dispatch:
-    inputs:
-      run_id:
-        description: The run of wheel-builder to use for finding artifacts.
-        required: true
-      environment:
-        description: Which PyPI environment to upload to
-        required: true
-        type: choice
-        options: ["testpypi", "pypi"]
-  workflow_run:
-    workflows: ["Wheel Builder"]
-    types: [completed]
-
-env:
-  PUBLISH_REQUIREMENTS_PATH: .github/requirements/publish-requirements.txt
-
-permissions:
-  contents: read
-
 jobs:
   publish:
     runs-on: ubuntu-latest
